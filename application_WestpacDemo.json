@@ -1,14 +1,42 @@
 {
 	"metaData": {
 		"version": "6.6.0.10059",
-		"creationDate": "Dec 12, 2018 2:01 PM",
-		"managementServer": "srisa09-T18918",
-		"author": "superuser"
+		"creationDate": "Feb 25, 2019 9:09 AM",
+		"author": "superuser",
+		"managementServer": "srisa09-T18918"
 	},
 	"data": [
 		{
 			"status": "EXPORTED",
 			"referencedObjects": {
+				"sharedComponents": [
+					{
+						"type": "SHARED_COMPONENT_REVISION",
+						"referenceId": "@Tomcat Express/Tomcat Express/2.8",
+						"sharedComponentName": "Tomcat Express",
+						"revisionName": "Tomcat Express",
+						"revisionVersion": "2.8"
+					},
+					{
+						"type": "SHARED_COMPONENT_REVISION",
+						"referenceId": "@UTILITY/UTILITY/1.0.0",
+						"sharedComponentName": "UTILITY",
+						"revisionName": "UTILITY",
+						"revisionVersion": "1.0.0"
+					}
+				],
+				"sharedComponentFlows": [
+					{
+						"type": "SC_FLOW",
+						"fullPath": "Tomcat Express/Tomcat Express/2.8/Flows/Deploy",
+						"referenceId": "@Tomcat Express/Tomcat Express/2.8/Flows/Deploy"
+					},
+					{
+						"type": "SC_FLOW",
+						"fullPath": "UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts",
+						"referenceId": "@UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts"
+					}
+				],
 				"sharedComponentParameters": [
 					{
 						"type": "PARAMETER",
@@ -22,34 +50,6 @@
 						"parameterType": "STRING",
 						"path": "Tomcat Express/Tomcat Express/2.8/Tomcat home"
 					}
-				],
-				"sharedComponentFlows": [
-					{
-						"type": "SC_FLOW",
-						"fullPath": "Tomcat Express/Tomcat Express/2.8/Flows/Deploy",
-						"referenceId": "@Tomcat Express/Tomcat Express/2.8/Flows/Deploy"
-					},
-					{
-						"type": "SC_FLOW",
-						"fullPath": "UTILITY/UTILITY/2.6/Flows/General/Revision-1/RegisterArtifacts",
-						"referenceId": "@UTILITY/UTILITY/2.6/Flows/General/Revision-1/RegisterArtifacts"
-					}
-				],
-				"sharedComponents": [
-					{
-						"type": "SHARED_COMPONENT_REVISION",
-						"referenceId": "@Tomcat Express/Tomcat Express/2.8",
-						"sharedComponentName": "Tomcat Express",
-						"revisionName": "Tomcat Express",
-						"revisionVersion": "2.8"
-					},
-					{
-						"type": "SHARED_COMPONENT_REVISION",
-						"referenceId": "@UTILITY/UTILITY/2.6",
-						"sharedComponentName": "UTILITY",
-						"revisionName": "UTILITY",
-						"revisionVersion": "2.6"
-					}
 				]
 			},
 			"scope": {},
@@ -62,7 +62,7 @@
 				"components": [],
 				"mappedSharedComponents": [
 					"@Tomcat Express/Tomcat Express/2.8",
-					"@UTILITY/UTILITY/2.6"
+					"@UTILITY/UTILITY/1.0.0"
 				],
 				"serverTypes": [
 					{
@@ -84,7 +84,7 @@
 						"exclusiveExecution": false,
 						"mappedComponents": [],
 						"mappedSharedComponents": [
-							"@UTILITY/UTILITY/2.6"
+							"@UTILITY/UTILITY/1.0.0"
 						]
 					}
 				],
@@ -153,7 +153,7 @@
 												"type": "PROCESS_SERVER_TYPE",
 												"name": "@Utility",
 												"logic": {
-													"sharedComponentFlow": "@UTILITY/UTILITY/2.6/Flows/General/Revision-1/RegisterArtifacts"
+													"sharedComponentFlow": "@UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts"
 												}
 											}
 										],
@@ -167,7 +167,7 @@
 														"type": "PROCESS_SERVER_TYPE",
 														"name": "@Utility",
 														"logic": {
-															"sharedComponentFlow": "@UTILITY/UTILITY/2.6/Flows/General/Revision-1/RegisterArtifacts"
+															"sharedComponentFlow": "@UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts"
 														}
 													}
 												]
