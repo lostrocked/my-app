@@ -1,3 +1,4 @@
+// vars/deployhub.groovy
 class deployhub {
     String body="";    
     String message="";    
