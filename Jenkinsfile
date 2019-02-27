@@ -5,6 +5,6 @@
      this.pw = suser;
      
      def res = doGetHttpRequestWithJson("${url}" + enc(userid) + "&pass=" + enc(pw));
-     echo res.result;
+     println(res.result);
      return res.success;
     }
