@@ -1,7 +1,7 @@
 {
 	"metaData": {
 		"version": "6.6.0.10059",
-		"creationDate": "Feb 25, 2019 9:09 AM",
+		"creationDate": "Feb 27, 2019 11:19 AM",
 		"author": "superuser",
 		"managementServer": "srisa09-T18918"
 	},
@@ -19,10 +19,10 @@
 					},
 					{
 						"type": "SHARED_COMPONENT_REVISION",
-						"referenceId": "@UTILITY/UTILITY/1.0.0",
+						"referenceId": "@UTILITY/UTILITY/1.3",
 						"sharedComponentName": "UTILITY",
 						"revisionName": "UTILITY",
-						"revisionVersion": "1.0.0"
+						"revisionVersion": "1.3"
 					}
 				],
 				"sharedComponentFlows": [
@@ -33,8 +33,8 @@
 					},
 					{
 						"type": "SC_FLOW",
-						"fullPath": "UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts",
-						"referenceId": "@UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts"
+						"fullPath": "UTILITY/UTILITY/1.3/Flows/General/Revision-1/RegisterArtifacts",
+						"referenceId": "@UTILITY/UTILITY/1.3/Flows/General/Revision-1/RegisterArtifacts"
 					}
 				],
 				"sharedComponentParameters": [
@@ -59,10 +59,23 @@
 				"name": "SomeApplication",
 				"description": "SomeApplication",
 				"uuid": "be1048be-a285-4266-b6d9-78832eb73c30",
-				"components": [],
+				"components": [
+					{
+						"type": "COMPONENT",
+						"referenceId": "@Demo1",
+						"name": "Demo1",
+						"description": "Demo1"
+					},
+					{
+						"type": "COMPONENT",
+						"referenceId": "@Demo1-import-2019-02-25 11:44:39.545",
+						"name": "Demo1-import-2019-02-25 11:44:39.545",
+						"description": "Demo1"
+					}
+				],
 				"mappedSharedComponents": [
 					"@Tomcat Express/Tomcat Express/2.8",
-					"@UTILITY/UTILITY/1.0.0"
+					"@UTILITY/UTILITY/1.3"
 				],
 				"serverTypes": [
 					{
@@ -84,7 +97,7 @@
 						"exclusiveExecution": false,
 						"mappedComponents": [],
 						"mappedSharedComponents": [
-							"@UTILITY/UTILITY/1.0.0"
+							"@UTILITY/UTILITY/1.3"
 						]
 					}
 				],
@@ -153,7 +166,7 @@
 												"type": "PROCESS_SERVER_TYPE",
 												"name": "@Utility",
 												"logic": {
-													"sharedComponentFlow": "@UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts"
+													"sharedComponentFlow": "@UTILITY/UTILITY/1.3/Flows/General/Revision-1/RegisterArtifacts"
 												}
 											}
 										],
@@ -167,7 +180,7 @@
 														"type": "PROCESS_SERVER_TYPE",
 														"name": "@Utility",
 														"logic": {
-															"sharedComponentFlow": "@UTILITY/UTILITY/1.0.0/Flows/General/Revision-1/RegisterArtifacts"
+															"sharedComponentFlow": "@UTILITY/UTILITY/1.3/Flows/General/Revision-1/RegisterArtifacts"
 														}
 													}
 												]
