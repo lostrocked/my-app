@@ -1,9 +1,9 @@
 {
 	"metaData": {
-		"version": "6.6.0.10059",
-		"creationDate": "Feb 27, 2019 11:19 AM",
+		"managementServer": "SRISA09-NAC.ca.com",
 		"author": "superuser",
-		"managementServer": "srisa09-T18918"
+		"creationDate": "May 12, 2019 2:30 PM",
+		"version": "6.6.0.9640"
 	},
 	"data": [
 		{
@@ -25,6 +25,7 @@
 						"revisionVersion": "1.3"
 					}
 				],
+				"sharedComponentParameters": [],
 				"sharedComponentFlows": [
 					{
 						"type": "SC_FLOW",
@@ -36,20 +37,6 @@
 						"fullPath": "UTILITY/UTILITY/1.3/Flows/General/Revision-1/RegisterArtifacts",
 						"referenceId": "@UTILITY/UTILITY/1.3/Flows/General/Revision-1/RegisterArtifacts"
 					}
-				],
-				"sharedComponentParameters": [
-					{
-						"type": "PARAMETER",
-						"referenceId": "@Tomcat Express/Tomcat Express/2.8/Deploy as exploded?",
-						"parameterType": "BOOLEAN",
-						"path": "Tomcat Express/Tomcat Express/2.8/Deploy as exploded?"
-					},
-					{
-						"type": "PARAMETER",
-						"referenceId": "@Tomcat Express/Tomcat Express/2.8/Tomcat home",
-						"parameterType": "STRING",
-						"path": "Tomcat Express/Tomcat Express/2.8/Tomcat home"
-					}
 				]
 			},
 			"scope": {},
@@ -57,7 +44,7 @@
 				"type": "APPLICATION",
 				"referenceId": "@SomeApplication",
 				"name": "SomeApplication",
-				"description": "SomeApplication",
+				"description": "(imported)SomeApplication",
 				"uuid": "be1048be-a285-4266-b6d9-78832eb73c30",
 				"components": [
 					{
@@ -84,7 +71,9 @@
 						"name": "Tomcat",
 						"description": "Tomcat",
 						"exclusiveExecution": false,
-						"mappedComponents": [],
+						"mappedComponents": [
+							"@Demo1"
+						],
 						"mappedSharedComponents": [
 							"@Tomcat Express/Tomcat Express/2.8"
 						]
@@ -95,7 +84,9 @@
 						"name": "Utility",
 						"description": "Utility",
 						"exclusiveExecution": false,
-						"mappedComponents": [],
+						"mappedComponents": [
+							"@Demo1"
+						],
 						"mappedSharedComponents": [
 							"@UTILITY/UTILITY/1.3"
 						]
@@ -121,32 +112,25 @@
 									{
 										"serverType": "@Tomcat",
 										"agents": [
-											"srisa09-T16004"
+											"CDK-GB-NAC",
+											"SRISA09-WIN-01",
+											"WIN-N0S12H9Q5O0"
 										]
 									},
 									{
 										"serverType": "@Utility",
 										"agents": [
-											"srisa09-T17077"
+											"SRISA09-WIN-01"
 										]
 									}
 								],
 								"mappedProcessTags": [
+									"@SomeApplication-Arch/Processes/F1",
+									"@SomeApplication-Arch/Processes/F2",
 									"@SomeApplication-Arch/Processes/Pre-Plan",
 									"@SomeApplication-Arch/Processes/Tomcat-Deploy"
 								],
-								"parameterValues": [
-									{
-										"parameter": "@Tomcat Express/Tomcat Express/2.8/Deploy as exploded?",
-										"simpleValue": "true",
-										"serverTypes": []
-									},
-									{
-										"parameter": "@Tomcat Express/Tomcat Express/2.8/Tomcat home",
-										"simpleValue": "/usr/share/tomcat7",
-										"serverTypes": []
-									}
-								]
+								"parameterValues": []
 							}
 						],
 						"processCategories": [
@@ -156,6 +140,56 @@
 								"name": "Processes",
 								"description": "",
 								"processes": [
+									{
+										"type": "PROCESS",
+										"referenceId": "@SomeApplication-Arch/Processes/F1",
+										"name": "F1",
+										"description": "",
+										"processServerTypes": [
+											{
+												"type": "PROCESS_SERVER_TYPE",
+												"name": "@Tomcat"
+											}
+										],
+										"tags": [
+											{
+												"type": "PROCESS_TAG",
+												"referenceId": "@SomeApplication-Arch/Processes/F1",
+												"latest": true,
+												"processServerTypes": [
+													{
+														"type": "PROCESS_SERVER_TYPE",
+														"name": "@Tomcat"
+													}
+												]
+											}
+										]
+									},
+									{
+										"type": "PROCESS",
+										"referenceId": "@SomeApplication-Arch/Processes/F2",
+										"name": "F2",
+										"description": "",
+										"processServerTypes": [
+											{
+												"type": "PROCESS_SERVER_TYPE",
+												"name": "@Utility"
+											}
+										],
+										"tags": [
+											{
+												"type": "PROCESS_TAG",
+												"referenceId": "@SomeApplication-Arch/Processes/F2",
+												"latest": true,
+												"processServerTypes": [
+													{
+														"type": "PROCESS_SERVER_TYPE",
+														"name": "@Utility"
+													}
+												]
+											}
+										]
+									},
 									{
 										"type": "PROCESS",
 										"referenceId": "@SomeApplication-Arch/Processes/Pre-Plan",
@@ -231,7 +265,7 @@
 						"name": "SomeApplication-Temp1",
 						"description": "SomeApplication-Temp1",
 						"allowModificationBeforeRun": false,
-						"status": "Locked",
+						"status": "Active",
 						"properties": [
 							{
 								"type": "TEMPLATE_PROPERTY",
@@ -244,21 +278,21 @@
 							"initialization": [
 								{
 									"type": "STEP",
-									"referenceId": "@SomeApplication-Temp1/Pre-Plan-STEP",
-									"name": "Pre-Plan-STEP",
+									"referenceId": "@SomeApplication-Temp1/PRE-PLAN-STEP",
+									"name": "PRE-PLAN-STEP",
 									"environment": "@Unit",
-									"processTag": "@SomeApplication-Arch/Processes/Pre-Plan",
+									"processTag": "@SomeApplication-Arch/Processes/F2",
 									"stage": "PRE_PLAN"
 								}
 							],
 							"deployment": [
 								{
 									"type": "STEP",
-									"referenceId": "@SomeApplication-Temp1/Tomcat-Deploy",
-									"name": "Tomcat-Deploy",
+									"referenceId": "@SomeApplication-Temp1/DEPLOY-STEP",
+									"name": "DEPLOY-STEP",
 									"triggerRollbackOnFailure": true,
 									"mustSucceed": true,
-									"processTag": "@SomeApplication-Arch/Processes/Tomcat-Deploy",
+									"processTag": "@SomeApplication-Arch/Processes/F1",
 									"stage": "DEPLOYMENT"
 								}
 							],
@@ -272,13 +306,13 @@
 								"description": "Deployment-Tomcat",
 								"stages": {
 									"initialization": {
-										"prePlan": "@SomeApplication-Temp1/Pre-Plan-STEP",
+										"prePlan": "@SomeApplication-Temp1/PRE-PLAN-STEP",
 										"preDeployment": ""
 									},
 									"deployment": {
 										"steps": [
 											{
-												"step": "@SomeApplication-Temp1/Tomcat-Deploy",
+												"step": "@SomeApplication-Temp1/DEPLOY-STEP",
 												"dependencies": []
 											}
 										]
