@@ -3,7 +3,7 @@ class deployhub {
     String body="";    
     String message="";    
     String cookie="";   
-    String url="http://srisa09-t18918:7080/datamanagement/a/api/v2/applications";   
+    String url="http://srisa09-l28234.lvn.broadcom.net:8080/datamanagement/a/api/v2/applications";   
     String userid="superuser";
     String pw="suser"; 
     Integer statusCode;    
