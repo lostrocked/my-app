@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
 <Artifacts>
-	<Artifact name="myweb.war" artifact-type="WAR" src-path="0.0.2" dest-path="" region-specific="false" server-type="Tomcat"/>
+	<Artifact name="myweb.war" artifact-type="Express WAR" src-path="0.0.2" dest-path="" region-specific="false" server-type="Tomcat"/>
 </Artifacts>
