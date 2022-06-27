@@ -2,8 +2,5 @@
 
 <Artifacts>
 	<Artifact name="myweb.war" artifact-type="Express WAR" src-path="target" dest-path="" region-specific="false" server-type="Tomcat"/>
-	<Artifact name="1.bat" artifact-type="ZIP" src-path="env/unit" dest-path="" region-specific="true" server-type="Tomcat"/>
-	<Artifact name="1.bat" artifact-type="ZIP" src-path="env/intg" dest-path="" region-specific="true" server-type="Tomcat"/>
-	<Artifact name="1.bat" artifact-type="ZIP" src-path="env/accp" dest-path="" region-specific="true" server-type="Tomcat"/>
-	<Artifact name="1.bat" artifact-type="ZIP" src-path="env/prod" dest-path="" region-specific="true" server-type="Tomcat"/>
+	<Artifact name="1.bat" artifact-type="ZIP" src-path="env/" dest-path="" region-specific="true" server-type="Tomcat"/>
 </Artifacts>
