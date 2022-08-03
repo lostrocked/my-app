@@ -2,6 +2,6 @@
 
 <Artifacts>
 	<Artifact name="myweb.war" artifact-type="Express WAR" src-path="target" dest-path="" region-specific="false" server-type="Tomcat"/>
-	<Artifact name="myweb.war" artifact-type="War" src-path="target" dest-path="" region-specific="false" server-type="JBOSS"/>
+	<Artifact name="myweb.war" artifact-type="War" src-path="target" dest-path="" region-specific="false" server-type="WEBLOGIC-SERVERS"/>
 	<Artifact name="1.bat" artifact-type="ZIP" src-path="env/" dest-path="" region-specific="true" server-type="Tomcat"/>
 </Artifacts>
